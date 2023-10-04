@@ -5,7 +5,7 @@ export default function Welcome() {
   return (
     <Layout>
       <h1 className="text-3xl text-center font-bold mb-8">
-        Your eTower Profile
+        Build your own website
       </h1>
 
       <ul>
