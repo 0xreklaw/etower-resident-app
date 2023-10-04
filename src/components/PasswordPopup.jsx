@@ -31,7 +31,7 @@ export default function PasswordPopup() {
           <li>
             <input
               className="h-10 bg-gray-100 rounded-md pl-3 w-72"
-              type="password"
+              type="text"
               value={code}
               placeholder="Password"
               onChange={onChange}
