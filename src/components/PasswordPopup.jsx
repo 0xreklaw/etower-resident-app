@@ -23,7 +23,7 @@ export default function PasswordPopup() {
 
   return (
     <Layout>
-      <h1 className="text-3xl text-center font-bold mb-8">
+      <h1 className="text-2xl text-center font-bold mb-8">
         Enter the secret password 🤫
       </h1>
       <form onSubmit={onSubmit}>

@@ -73,16 +73,8 @@ export default function Create() {
   return (
     <Layout>
       <h1 className="text-3xl text-center font-bold mb-8">
-        Your Personal Website
+        Create your Profile
       </h1>
-      {/* image */}
-
-      {/* name */}
-      {/* bio */}
-
-      {/* Section */}
-
-      {/* Links */}
       <form onSubmit={onSubmit}>
         <ul className="flex flex-col items-center justify-center">
           <li className="relative mb-4">
@@ -111,7 +103,7 @@ export default function Create() {
           </li>
           <li className="mb-4">
             <input
-              className="h-10 bg-gray-100 rounded-md pl-3 w-56"
+              className="h-10 bg-gray-100 rounded-md pl-3 w-72"
               type="text"
               name="name"
               placeholder="Full name"
@@ -121,7 +113,7 @@ export default function Create() {
           </li>
           <li className="mb-4">
             <input
-              className="h-10 bg-gray-100 rounded-md pl-3 w-56"
+              className="h-10 bg-gray-100 rounded-md pl-3 w-72"
               type="text"
               name="bio"
               placeholder="Write a bio"
@@ -134,7 +126,7 @@ export default function Create() {
           </li>
           <li className="mb-4">
             <input
-              className="h-10 bg-gray-100 rounded-md pl-3 w-56"
+              className="h-10 bg-gray-100 rounded-md pl-3 w-72"
               type="text"
               name="linkedin"
               placeholder="LinkedIn"
@@ -144,7 +136,7 @@ export default function Create() {
           </li>
           <li className="mb-4">
             <input
-              className="h-10 bg-gray-100 rounded-md pl-3 w-56"
+              className="h-10 bg-gray-100 rounded-md pl-3 w-72"
               type="text"
               name="instagram"
               placeholder="Instagram"
@@ -154,7 +146,7 @@ export default function Create() {
           </li>
           <li className="mb-4">
             <input
-              className="h-10 bg-gray-100 rounded-md pl-3 w-56"
+              className="h-10 bg-gray-100 rounded-md pl-3 w-72"
               type="text"
               name="twitter"
               placeholder="Twitter"
@@ -164,7 +156,7 @@ export default function Create() {
           </li>
           <li className="mb-4">
             <input
-              className="h-10 bg-gray-100 rounded-md pl-3 w-56"
+              className="h-10 bg-gray-100 rounded-md pl-3 w-72"
               type="text"
               name="tiktok"
               placeholder="TikTok"
@@ -174,7 +166,7 @@ export default function Create() {
           </li>
           <li className="mb-4">
             <input
-              className="h-10 bg-gray-100 rounded-md pl-3 w-56"
+              className="h-10 bg-gray-100 rounded-md pl-3 w-72"
               type="text"
               name="other_website"
               placeholder="Other Website"
@@ -182,20 +174,15 @@ export default function Create() {
               onChange={onChange}
             />
           </li>
-          {/* <li className="mb-4">
-            <input
-              className="h-10 bg-gray-100 rounded-md pl-3 w-56"
-              type="text"
-              name="password"
-              placeholder="Your secret password"
-              value={residentData.bio}
-              onChange={onChange}
-            />
-          </li> */}
           <li>
             <button
+              disabled={
+                residentData.name === "" &&
+                residentData.bio === "" &&
+                residentData.image === ""
+              }
               type="submit"
-              className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded w-56 mt-4 rounded-md"
+              className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded w-72 mt-4 rounded-md"
             >
               Create Website
             </button>
