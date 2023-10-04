@@ -40,23 +40,24 @@ export default function Resident() {
     <Layout>
       {resident ? (
         <div className="flex flex-col items-center bg-white p-4">
-          <img
-            className="rounded-full"
-            width={100}
-            height={100}
-            src={`https://fsebzomnldetfkvttpec.supabase.co/storage/v1/object/public/Profiles/${resident.image_url}`}
-          />
-          <div className="mt-2 text-center text-xl font-bold">
+          <div className="w-48 h-48 relative overflow-hidden rounded-full">
+            <img
+              className="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 object-cover w-full h-full"
+              src={`https://fsebzomnldetfkvttpec.supabase.co/storage/v1/object/public/Profiles/${resident.image_url}`}
+              alt="Resident"
+            />
+          </div>
+          <div className="mt-2 text-center text-2xl font-bold">
             {resident.name}
           </div>
-          <div className="mt-2 text-center mb-4">{resident.bio}</div>
+          <div className="mt-2 text-center mb-4 text-lg">{resident.bio}</div>
           <div className="mt-2 flex flex-col space-y-2">
             {resident.linkedin && (
               <a
                 href={`https://www.linkedin.com/in/${resident.linkedin}`}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center bg-gray-100 p-2 rounded w-56 justify-center"
+                className="flex items-center bg-gray-100 p-2 rounded-lg w-72 justify-center text-lg"
               >
                 <FaLinkedin className="mr-2" />
                 LinkedIn
@@ -67,7 +68,7 @@ export default function Resident() {
                 href={`https://www.instagram.com/${resident.instagram}`}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center bg-gray-100 p-2 rounded w-56 justify-center"
+                className="flex items-center bg-gray-100 p-2 rounded w-72 justify-center text-lg"
               >
                 <FaInstagram className="mr-2" />
                 Instagram
@@ -78,7 +79,7 @@ export default function Resident() {
                 href={`https://twitter.com/${resident.twitter}`}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center bg-gray-100 p-2 rounded w-56 justify-center"
+                className="flex items-center bg-gray-100 p-2 rounded w-72 justify-center text-lg"
               >
                 <FaTwitter className="mr-2" />
                 Twitter
@@ -89,7 +90,7 @@ export default function Resident() {
                 href={`https://www.tiktok.com/@${resident.tiktok}`}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center bg-gray-100 p-2 rounded w-56 justify-center"
+                className="flex items-center bg-gray-100 p-2 rounded w-72 justify-center text-lg"
               >
                 <FaTiktok className="mr-2" />
                 TikTok
@@ -100,7 +101,7 @@ export default function Resident() {
                 href={`https://${resident.other_website}`}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center bg-gray-100 p-2 rounded w-56 justify-center"
+                className="flex items-center bg-gray-100 p-2 rounded w-72 justify-center text-lg"
               >
                 <FaGlobe className="mr-2" />
                 Website
