@@ -4,11 +4,14 @@ import PasswordPopup from "../../components/PasswordPopup";
 import Layout from "../../components/Layout";
 import { useAuth } from "../../AuthProvider";
 import { useResident } from "../../ResidentProvider";
+import Loading from "../../components/Loading";
 
 export default function Create() {
   const { auth } = useAuth();
-  const { createResident, getResidentByName } = useResident();
+  const { createResident } = useResident();
   const navigate = useNavigate();
+
+  const [loading, setLoading] = useState(false);
 
   const [residentData, setResidentData] = useState({
     name: "",
@@ -46,6 +49,7 @@ export default function Create() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       await createResident(residentData);
 
@@ -64,10 +68,15 @@ export default function Create() {
       console.error("Error creating resident:", error);
       // Optionally, you can set some state here to notify the user of the error.
     }
+    setLoading(false);
   };
 
   if (!auth) {
     return <PasswordPopup />;
+  }
+
+  if (loading) {
+    return <Loading />;
   }
 
   return (
