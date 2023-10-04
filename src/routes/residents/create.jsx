@@ -52,8 +52,6 @@ export default function Create() {
     setLoading(true);
     try {
       await createResident(residentData);
-
-      navigate("/residents");
       setResidentData({
         name: "",
         bio: "",
@@ -69,6 +67,7 @@ export default function Create() {
       // Optionally, you can set some state here to notify the user of the error.
     }
     setLoading(false);
+    navigate("/residents");
   };
 
   if (!auth) {

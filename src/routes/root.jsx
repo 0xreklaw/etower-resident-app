@@ -17,7 +17,7 @@ export default function Welcome() {
           </Link>
         </li>
         <li className="text-center font-medium">
-          <Link to={`residents`}>View Resident Profiles</Link>
+          <Link to={`residents`}>View Residents</Link>
         </li>
       </ul>
     </Layout>
