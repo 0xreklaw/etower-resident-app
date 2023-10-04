@@ -31,12 +31,20 @@ export default function Residents() {
 
   return (
     <Layout>
-      <h1>Residents</h1>
+      <h1 className="text-3xl text-center font-bold mb-8">
+        Meet the Residents
+      </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {residents.map((resident) => (
           <Link key={resident.id} to={`/residents/${resident.id}`}>
-            <div className="bg-white p-4 rounded-lg shadow-md">
-              {resident.name}
+            <div className="flex flex-col items-center bg-white p-4 rounded-lg shadow-md">
+              <img
+                className="rounded-full"
+                width={100}
+                height={100}
+                src={`https://fsebzomnldetfkvttpec.supabase.co/storage/v1/object/public/Profiles/${resident.image_url}`}
+              />
+              <div className="mt-2 text-center text-lg font-bold">{resident.name}</div>
             </div>
           </Link>
         ))}

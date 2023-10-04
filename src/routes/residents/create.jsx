@@ -13,6 +13,12 @@ export default function Create() {
   const [residentData, setResidentData] = useState({
     name: "",
     bio: "",
+    image: "",
+    linkedin: "",
+    instagram: "",
+    twitter: "",
+    tiktok: "",
+    other_website: "",
   });
 
   const [imagePreviewUrl, setImagePreviewUrl] = useState(null);
@@ -43,17 +49,17 @@ export default function Create() {
     try {
       await createResident(residentData);
 
-      // Fetch the resident by the unique field after creation.
-      const fetchedResident = await getResidentByName(residentData.name);
-
-      if (fetchedResident) {
-        navigate(`/resident/${fetchedResident.id}`);
-      }
+      navigate("/residents");
       setResidentData({
         name: "",
         bio: "",
+        image: "",
+        linkedin: "",
+        instagram: "",
+        twitter: "",
+        tiktok: "",
+        other_website: "",
       });
-      navigate(`/residents/${newResident.id}`);
     } catch (error) {
       console.error("Error creating resident:", error);
       // Optionally, you can set some state here to notify the user of the error.
@@ -66,7 +72,9 @@ export default function Create() {
 
   return (
     <Layout>
-      <h1 className="text-3xl text-center font-bold mb-8">Your Portfolio</h1>
+      <h1 className="text-3xl text-center font-bold mb-8">
+        Your Personal Website
+      </h1>
       {/* image */}
 
       {/* name */}
@@ -106,7 +114,7 @@ export default function Create() {
               className="h-10 bg-gray-100 rounded-md pl-3 w-56"
               type="text"
               name="name"
-              placeholder="name"
+              placeholder="Full name"
               value={residentData.name}
               onChange={onChange}
             />
@@ -116,11 +124,74 @@ export default function Create() {
               className="h-10 bg-gray-100 rounded-md pl-3 w-56"
               type="text"
               name="bio"
-              placeholder="bio"
+              placeholder="Write a bio"
               value={residentData.bio}
               onChange={onChange}
             />
           </li>
+          <li>
+            <p className="text-lg font-bold mt-4 mb-2">Optional Handles</p>
+          </li>
+          <li className="mb-4">
+            <input
+              className="h-10 bg-gray-100 rounded-md pl-3 w-56"
+              type="text"
+              name="linkedin"
+              placeholder="LinkedIn"
+              value={residentData.linkedin}
+              onChange={onChange}
+            />
+          </li>
+          <li className="mb-4">
+            <input
+              className="h-10 bg-gray-100 rounded-md pl-3 w-56"
+              type="text"
+              name="instagram"
+              placeholder="Instagram"
+              value={residentData.instagram}
+              onChange={onChange}
+            />
+          </li>
+          <li className="mb-4">
+            <input
+              className="h-10 bg-gray-100 rounded-md pl-3 w-56"
+              type="text"
+              name="twitter"
+              placeholder="Twitter"
+              value={residentData.twitter}
+              onChange={onChange}
+            />
+          </li>
+          <li className="mb-4">
+            <input
+              className="h-10 bg-gray-100 rounded-md pl-3 w-56"
+              type="text"
+              name="tiktok"
+              placeholder="TikTok"
+              value={residentData.tiktok}
+              onChange={onChange}
+            />
+          </li>
+          <li className="mb-4">
+            <input
+              className="h-10 bg-gray-100 rounded-md pl-3 w-56"
+              type="text"
+              name="other_website"
+              placeholder="Other Website"
+              value={residentData.other_website}
+              onChange={onChange}
+            />
+          </li>
+          {/* <li className="mb-4">
+            <input
+              className="h-10 bg-gray-100 rounded-md pl-3 w-56"
+              type="text"
+              name="password"
+              placeholder="Your secret password"
+              value={residentData.bio}
+              onChange={onChange}
+            />
+          </li> */}
           <li>
             <button
               type="submit"

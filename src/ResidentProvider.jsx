@@ -33,12 +33,7 @@ export function ResidentProvider({ children }) {
   
     if (error) throw error;
   
-    if (!newResident || newResident.length === 0) {
-      console.error("No data returned after insert:", newResident);
-      throw new Error("Failed to retrieve the new resident's data after creation.");
-    }
-  
-    return newResident[0];
+    return newResident;
   };
 
   const getResidentById = async (id) => {
