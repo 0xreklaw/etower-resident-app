@@ -1,3 +1,10 @@
 {
-  "routes": [{ "src": "/.*", "dest": "/index.html" }]
-}
+    "routes": [
+      { "src": "/$", "dest": "/index.html" },
+      { "src": "/residents$", "dest": "/index.html" },
+      { "src": "/residents/create$", "dest": "/index.html" },
+      { "src": "/residents/[0-9a-zA-Z_-]+$", "dest": "/index.html" },
+      { "handle": "filesystem" }
+    ]
+  }
+  
