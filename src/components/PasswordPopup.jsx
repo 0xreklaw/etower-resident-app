@@ -30,7 +30,7 @@ export default function PasswordPopup() {
         <ul className="flex flex-col items-center justify-center">
           <li>
             <input
-              className="h-10 bg-gray-100 rounded-md pl-3 w-56"
+              className="h-10 bg-gray-100 rounded-md pl-3 w-72"
               type="password"
               value={code}
               placeholder="Password"
@@ -40,7 +40,7 @@ export default function PasswordPopup() {
           <li>
             <button
               type="submit"
-              className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded w-56 mt-4 rounded-md"
+              className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded w-72 mt-4 rounded-md"
             >
               Enter
             </button>
