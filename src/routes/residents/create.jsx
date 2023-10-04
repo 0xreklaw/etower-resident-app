@@ -82,7 +82,7 @@ export default function Create() {
   return (
     <Layout>
       <h1 className="text-3xl text-center font-bold mb-8">
-        Create your Profile
+        Create your Website
       </h1>
       <form onSubmit={onSubmit}>
         <ul className="flex flex-col items-center justify-center">
